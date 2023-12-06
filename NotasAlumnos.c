@@ -62,5 +62,21 @@ int main(void)
         double promedio_progreso = progreso(notas, j);
         printf("Progreso %d: %.1f\n", j + 1, promedio_progreso);
     }
+
+    int mejor = 0;
+    double best = (notas[0][0] + notas[0][1] + notas[0][2]) / 3.0;
+
+    for (int i = 1; i < 23; i++)
+    {
+        double prom = (notas[i][0] + notas[i][1] + notas[i][2]) / 3.0;
+
+        if (prom > best)
+        {
+            best = prom;
+            mejor = i;
+        }
+    }
+
+    printf("\nEl estudiante con el mejor promedio es el Estudiante %d\n", mejor + 1);
     return 0;
 }
